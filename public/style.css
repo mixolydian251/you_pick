@@ -1,0 +1,134 @@
+body{
+    margin: 0
+}
+
+#app{
+    color: #2b2b2b;
+    height: 100% ;
+    width: 100% ;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #D7CEC7;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+}
+
+h1{
+    color: white;
+    padding: 5px;
+}
+h3{
+   color: #dedede;
+    padding: 5px;
+    font-weight: 200;
+}
+
+
+h1, h2, h3, button, li{
+    margin: 0;
+}
+
+
+button{
+    margin: 3px;
+    background-color: #76323F;
+    font-size: 16px;
+    color: #dedede;
+    width:35vw;
+    min-width: 153px;
+    height: 44px;
+}
+button:focus{
+    outline: none;
+}
+button:hover{
+    color: white
+}
+button:disabled{
+    text-align: center;
+    margin: 3px;
+    background-color: rgba(118, 50, 63, 0.61);
+    font-size: 16px;
+    color: #dddddd;
+    width:35vw;
+    min-width: 153px;
+    height: 44px;
+}
+
+ol{
+    padding: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+
+li{
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.delete{
+    border: none;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    min-width: 0;
+    background-color: rgba(255, 255, 255, 0);
+    color: #565656;
+    font-size: 16px;
+}
+
+
+.list{
+    width: calc(70vw + 5px);
+    min-width: 226px;
+    margin: 8px;
+    border: thin solid #565656;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(223, 190, 158, 0.76);
+}
+.list:hover{
+    border: thin solid white;
+}
+
+.textfield{
+    margin: 3px;
+    width:35vw;
+    min-width: 153px;
+    height: 40px;
+    font-size: 14px;
+}
+
+.options{
+    margin: 5px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.getStarted{
+    color: #565656;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(223, 190, 158, 0.76);
+    border: thin solid #565656;
+    margin: 10px;
+    padding: 5px;
+    height: 100px;
+    width: calc(70vw + 5px);
+    min-width: 256px;
+}
+
+.banner{
+    width: 100vw;
+    background-color: #76323F;
+    margin-bottom: 80px;
+    padding: 5px;
+}
