@@ -1,0 +1,312 @@
+
+
+
+$primary: #3c5476;
+$secondary: #bed6f8;
+$complementary: #343434;
+$background: #fbfbfb;
+$black: ($primary - 60);
+
+//$primary: #76323F;
+//$secondary:#D7CEC7 ;
+//$complementary: #565656;
+//$background:rgba(223, 190, 158, 0.76) ;
+
+:root{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
+.centered{
+    width: 100vw;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+#app{
+    color: #2b2b2b;
+    height: 100% ;
+    width: 100% ;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: $background;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner{
+    h1{
+        text-shadow: 1px 1px 1px $black;
+        color: white;
+    }
+    h3{
+        color: white;
+        padding: 5px;
+        font-weight: 200;
+    }
+    width: 100vw;
+    background-color: $primary;
+    margin-bottom: 80px;
+}
+
+body{
+    margin: 0;
+    padding: 0
+}
+
+
+button{
+    margin: 3px;
+    border: 2px solid $primary;
+    background-color: $primary;
+    font-size: 16px;
+    color: (white - 20);
+    width:45vw;
+    min-width: 145px;
+    height: 44px;
+}
+button:hover{
+    text-shadow: 1px 1px 1px $black;
+    color: white;
+    border: 2px solid ($primary + 30);
+    border-right-color: $black;
+    border-bottom-color: $black;
+}
+button:active{
+    text-shadow: none;
+    color: white;
+    border: 2px solid ($primary + 30);
+    border-top-color: $black;
+    border-left-color: $black;
+}
+button:focus{
+    outline: none;
+}
+
+button:disabled{
+    border: none;
+    text-align: center;
+    margin: 3px;
+    background-color: $primary;
+    opacity: 0.6;
+    font-size: 16px;
+    color: (white - 50);
+    width:45vw;
+    min-width: 153px;
+    height: 44px;
+}
+
+
+
+
+.centered{
+    width: 100vw;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.delete{
+    border: none;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    min-width: 0;
+    background-color: rgba(255, 255, 255, 0);
+    color: $complementary;
+    font-size: 16px;
+}
+.delete:hover{
+    border: none;
+}
+.delete:active{
+    border: none;
+}
+
+
+.form{
+    margin-top: 3px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    input{
+        border: 1px solid $complementary;
+        margin: 0;
+        width: calc(90vw - 145px);
+        min-width: 141px;
+        height: 40px;
+        font-size: 14px;
+    }
+    button{
+        margin: 0;
+        border: 2px solid $primary;
+        width: 145px;
+    }
+    button:hover{
+        text-shadow: 1px 1px 1px $black;
+        color: white;
+        border: 2px solid ($primary + 30);
+        border-right-color: $black;
+        border-bottom-color: $black;
+    }
+    button:active{
+        text-shadow: none;
+        color: white;
+        border: 2px solid ($primary + 30);
+        border-top-color: $black;
+        border-left-color: $black;
+    }
+}
+
+.list{
+    color: #111;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    min-width: 286px;
+    border: thin solid $complementary;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: $secondary;
+}
+.list:hover{
+    border: thin solid #9c9c9c;
+}
+
+.modal{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    height: 35vh;
+    min-height: 143px;
+    width: 50vw;
+    top: 50vh;
+    left: 50vw;
+    right: auto;
+    bottom: auto;
+    transform: translate(50%, 80%);
+    h1{
+        margin: 0;
+        font-size: 30px;
+        color: #111111
+    }
+    h2{
+        margin: 0;
+        font-size: 18px;
+        color: $complementary
+    }
+    button{
+        margin: 3px;
+        background-color: $primary;
+        font-size: 16px;
+        color: (white - 20);
+        min-width: 1px;
+        width:113px;
+        height: 44px;
+    }
+}
+.modal:focus{
+    outline-color: $complementary;
+}
+
+.options{
+    display: flex;
+    justify-content: center;
+    ol{
+        padding: 0;
+        margin: 0;
+        list-style-position: inside;
+    }
+
+    li{
+        font-size: 18px;
+        margin-left: 10px;
+    }
+    h2{
+        color: rgba(17, 17, 17, 0.71);
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $secondary;
+        border: thin solid $complementary;
+        padding: 5px;
+        height: 100px;
+        width: 90vw;
+        min-width: 286px;
+    }
+
+}
+
+.list{
+    color: #111;
+    margin: 8px;
+    width: 90vw;
+    min-width: 286px;
+    border: thin solid $complementary;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: $secondary;
+}
+.list:hover{
+    border: thin solid #9c9c9c;
+}
+
+.modal{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    height: 50vh;
+    min-height: 143px;
+    width: 80vw;
+    top: 50vh;
+    left: 50vw;
+    right: auto;
+    bottom: auto;
+    transform: translate(12%, 54%);
+    h1{
+        margin: 0;
+        font-size: 30px;
+        color: #111111
+    }
+    h2{
+        margin: 0;
+        font-size: 18px;
+        color: $complementary
+    }
+    button{
+        margin: 3px;
+        background-color: $primary;
+        font-size: 16px;
+        color: (white - 20);
+        min-width: 1px;
+        width:113px;
+        height: 44px;
+    }
+}
+.modal:focus{
+    outline-color: $complementary;
+}

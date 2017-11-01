@@ -3,20 +3,16 @@ import Header from './Header.js';
 import Action from './Action.js';
 import Options from './Options.js';
 import Form from './Form.js';
+import Modal from './Modal.js'
 
 class YouPickApp extends React.Component {
-    constructor(props) {
-        super(props);
-        this.removeOptions = this.removeOptions.bind(this);
-        this.addOption = this.addOption.bind(this);
-        this.pickOption = this.pickOption.bind(this);
-        this.removeIndividual = this.removeIndividual.bind(this);
-        this.state = {
-            options: [],
-            error: undefined
-        }
-    }
-    addOption(newOption) {
+    state = {
+        options: [],
+        error: undefined,
+        restaurant: undefined,
+        modalActive: undefined
+    };
+    addOption = (newOption) => {
         if(!newOption){
             this.setState(() => (
                 {error: 'Enter a restaurant.'}
@@ -31,16 +27,16 @@ class YouPickApp extends React.Component {
                     error: undefined,}
             ))
         }
-    }
-    removeOptions(){
+    };
+    removeOptions = () => {
         this.setState(() => {
             return {
                 options: [],
                 error: undefined
             }
         })
-    }
-    removeIndividual(option) {
+    };
+    removeIndividual = (option) => {
         this.setState((prevState) => (
             {
                 options: prevState.options.filter((element) => {
@@ -48,19 +44,28 @@ class YouPickApp extends React.Component {
                 })
             }
         ))
-    }
-    pickOption() {
+    };
+    pickOption = () => {
         let choice = Math.floor(Math.random() * this.state.options.length);
-        alert(`You should eat at ${this.state.options[choice].toLowerCase().split(' ').map((word) => {
-            return word.replace(word[0], word[0].toUpperCase())}).join(' ')}!`)
-    }
+        this.setState(() => ({modalActive: true,
+                              restaurant: this.state.options[choice].toLowerCase().split(' ').map((word) => {
+                                  return word.replace(word[0], word[0].toUpperCase())}).join(' '),
+                              error: undefined
+                            }));
+    };
+    closeModal = () =>{
+      this.setState(() => ({modalActive: false}))
+    };
     render() {
         return (
-            <div>
+            <div className="centered">
                 <Header/>
-                <Action numOptions={this.state.options.length} options={this.state.options} removeOptions={this.removeOptions} pickOption={this.pickOption}/>
-                <Options numOptions={this.state.options.length} options={this.state.options} removeIndividual={this.removeIndividual} />
+                <div>
+                    <Action options={this.state.options} removeOptions={this.removeOptions} pickOption={this.pickOption}/>
+                    <Options options={this.state.options} removeIndividual={this.removeIndividual} />
+                </div>
                 <Form addOption={this.addOption} error={this.state.error}/>
+                <Modal restaurant={this.state.restaurant} modalActive={this.state.modalActive} closeModal={this.closeModal} />
             </div>
         )
     }
